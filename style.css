@@ -1,0 +1,10 @@
+.hide{
+	display: none;
+}
+.color{
+	color: #f00 !important;
+}
+
+#vue-css div{
+	color: #00f;
+}

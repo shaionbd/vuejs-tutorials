@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Vue JS Tutorial 1</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="vue-app">
+		<h2>2 way data binding</h2>
+		<p>Message: {{ message }}</p>
+		<input type="text" v-model="message">
+		<div v-html="renderHtml"></div>
+
+	</div>
+
+	<hr>
+
+	<div id="vue-container">
+		<h2>Event Modifier</h2>
+		<a v-bind:href="website">Website</a>
+		<p v-bind:title="website">Hover Here to View Website Link</p>
+		<p>Message: {{ message }}</p>
+		<button v-on:click="reverseMessage">Click For Reverse Message</button>
+		<p>{{ output }}</p>
+
+		<br><br>
+		<button v-on:click.once="Add(1)">Increase Age 1</button>
+		<button v-on:click="Subtract(1)">Decrease Age 1</button>
+		<button v-on:dblclick="Add(10)">Increase Age 10</button>
+		<button v-on:dblclick.once="Subtract(10)">Decrease Age 10</button>
+		<p>Age: {{ age }}</p>
+		<a v-on:click.prevent="click" href="https://vuejs.org/v2/guide/events.html#Event-Modifiers">Hello</a>
+	</div>
+
+	<hr>
+
+	<div id="vue-css">
+		<h2>Dynamic CSS</h2>
+		<button v-on:click="loremShow">Click For View</button>
+		<div v-on:click="changeColor" v-bind:class="{hide, color}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae soluta fugiat quo eius eum, autem aliquam officiis ex, exercitationem excepturi doloremque porro perferendis culpa saepe vel voluptates commodi eligendi? Corporis!</div>
+	</div>
+	<hr>
+	<div id="vue-condition">
+		<button v-on:click="error = !error">Error Toggle</button>
+		<button v-on:click="success = !success">Success Toggle</button>
+		<p v-if="error">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia similique consectetur atque incidunt reiciendis libero et obcaecati delectus repudiandae explicabo reprehenderit, perferendis corporis laudantium, rerum voluptates ducimus deserunt ipsam. Possimus.
+		</p>
+	
+		<p v-else-if="success">
+			Lorem ipsum dolor sit amet
+		</p>
+	
+		<!-- show -->
+		<!-- <p v-show="error">
+			error
+		</p>
+
+		<p v-show="success">
+			success
+		</p> -->
+
+		
+	</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
