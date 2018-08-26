@@ -2,7 +2,6 @@ new Vue({
 	el: '#vue-app',
 	data: {
 		message: "Hello World",
-		
 	},
 	methods: {
 		
@@ -15,7 +14,7 @@ new Vue({
 		age: 15,
 		message: "Hello Bangladesh",
 		website: "http://www.hello.com",
-		renderHtml: '<a href="http://hey.com">Testing</a><h1>Testing</h1>',
+		renderHtml: '<a href="http://hey.com">Testing</a><p>Testing</p>',
 		output: ""
 	},
 	methods: {
@@ -43,11 +42,11 @@ new Vue({
 	},
 	methods: {
 		loremShow: function(){
-			if(this.status){
-				this.status = false;
+			if(this.hide){
+				// this.status = false;
 				this.hide = false;
 			}else{
-				this.status = true;
+				// this.status = true;
 				this.hide = true;
 			}
 		},
@@ -65,5 +64,25 @@ new Vue({
 	},
 	methods: {
 		
+	}
+})
+
+new Vue({
+	el: '#vue-loop',
+	data: {
+		singleValues: ['apple', 'banana', 'cherry', 'date', 'eggfruit', 'fig', 'grape'],
+		multipleObjects: [
+			{name: 'Apple', shape: 'circle'},
+			{name: 'Banana', shape: 'tall'},
+			{name: 'Cherry', shape: 'circle'},
+			{name: 'Date', shape: 'tall'},
+			{name: 'Eggfruit', shape: 'circle'},
+			{name: 'Fig', shape: 'oval'}
+		]
+	},
+	methods: {
+		ucfirst: function(e){
+			return e.charAt(0).toUpperCase() + e.slice(1);
+		}
 	}
 })

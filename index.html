@@ -12,8 +12,6 @@
 		<h2>2 way data binding</h2>
 		<p>Message: {{ message }}</p>
 		<input type="text" v-model="message">
-		<div v-html="renderHtml"></div>
-
 	</div>
 
 	<hr>
@@ -23,6 +21,7 @@
 		<a v-bind:href="website">Website</a>
 		<p v-bind:title="website">Hover Here to View Website Link</p>
 		<p>Message: {{ message }}</p>
+		<strong>Render HTML: </strong><div v-html="renderHtml"></div>
 		<button v-on:click="reverseMessage">Click For Reverse Message</button>
 		<p>{{ output }}</p>
 
@@ -53,6 +52,9 @@
 		<p v-else-if="success">
 			Lorem ipsum dolor sit amet
 		</p>
+		<p v-else>
+			OKK
+		</p>
 	
 		<!-- show -->
 		<!-- <p v-show="error">
@@ -62,8 +64,20 @@
 		<p v-show="success">
 			success
 		</p> -->
-
 		
+	</div>
+
+	<div id="vue-loop">
+		<strong>Fruits</strong>
+		<ul>
+			<li v-for="fruitinfo in multipleObjects"><strong>Name: </strong>{{ fruitinfo.name }} <strong>Shape: </strong>{{ fruitinfo.shape }}</li>
+		</ul>
+		
+		<strong>Fruit Dropdown</strong>
+		<select>
+			<option v-for="fruit in singleValues" v-bind:value="fruit">{{ ucfirst(fruit) }}</option>
+		</select>
+
 	</div>
 
 	<script src="app.js"></script>
